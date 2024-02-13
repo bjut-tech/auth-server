@@ -27,7 +27,7 @@ COPY --from=web-builder /app/dist ./web/dist
 
 RUN go build -a -installsuffix cgo -o /go/bin/auth-server .
 
-FROM gcr.io/distroless/base-debian12:nonroot AS runner
+FROM gcr.io/distroless/static-debian12:nonroot AS runner
 
 ENV APP_ENV=production
 
