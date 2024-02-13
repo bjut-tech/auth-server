@@ -45,7 +45,6 @@ func Authorize(c echo.Context) error {
 	}
 
 	return c.JSON(http.StatusOK, map[string]interface{}{
-		"error":   nil,
 		"message": "Authorized",
 	})
 }
