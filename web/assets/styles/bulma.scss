@@ -1,0 +1,19 @@
+$primary: #0096c3;
+$link: $primary;
+$family-sans-serif: "Noto Sans SC", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+@import "bulma/sass/utilities/_all";
+@import "bulma/sass/base/_all";
+@import "bulma/sass/helpers/_all";
+@import "bulma/sass/layout/section";
+@import "bulma/sass/elements/box";
+@import "bulma/sass/elements/button";
+@import "bulma/sass/elements/container";
+@import "bulma/sass/elements/title";
+@import "bulma/sass/form/shared";
+@import "bulma/sass/form/tools";
+@import "bulma/sass/form/input-textarea";
+
+.is-family-code {
+  white-space: pre;
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh" class="has-background-light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles/bulma.scss">
+  <title>统一认证登录 | bjut.tech</title>
+</head>
+<body>
+<div class="section is-medium">
+  <div class="container" style="max-width: 24rem">
+    <div class="mb-5 has-text-centered">
+      <span class="has-text-grey is-family-monospace">bjut.tech</span>
+      <h1 class="title is-4">统一认证登录</h1>
+    </div>
+    <div class="box my-4">
+      <div class="field">
+        <label class="label" for="input_username">用户名</label>
+        <div class="control">
+          <input id="input_username" class="input" type="text" autocomplete="username">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label" for="input_password">密码</label>
+        <div class="control">
+          <input id="input_password" class="input" type="password" autocomplete="current-password">
+        </div>
+        <p class="help">
+          您输入的密码仅用于向统一认证服务验证身份，我们不会以任何形式保存。
+        </p>
+      </div>
+      <div class="field is-hidden">
+        <div class="control">
+          <p id="error-message" class="help is-danger"></p>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control is-flex" style="gap: 1rem">
+          <button id="button_cancel" class="is-hidden button is-dark is-fullwidth">
+            取消
+          </button>
+          <button id="button_submit" class="button is-primary is-fullwidth">
+            登录
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="module" src="assets/js/login.js"></script>
+</body>
+</html>

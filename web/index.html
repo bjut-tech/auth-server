@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh" class="has-background-light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles/bulma.scss">
+  <title>bjut.tech 认证中心</title>
+</head>
+<body>
+<div class="section is-medium">
+  <div class="container" style="max-width: 24rem">
+    <div class="mb-5 has-text-centered">
+      <span class="has-text-grey is-family-monospace">bjut.tech</span>
+      <h1 class="title is-4">认证中心</h1>
+    </div>
+    <div id="container_main" class="box my-4">
+      <p>欢迎使用 bjut.tech 服务！</p>
+      <p class="mt-2 has-text-success is-logged-in is-hidden">您已登录！</p>
+      <p class="mt-2 has-text-danger is-not-logged-in is-hidden">您尚未登录！</p>
+    </div>
+    <div id="container_unauthorized" class="box my-4 is-hidden">
+      <p class="has-text-danger">您没有权限访问要访问的服务。</p>
+    </div>
+    <div id="claims" class="box has-background-dark has-text-white-ter is-size-7 my-4 is-family-code is-logged-in is-hidden"></div>
+    <div class="is-flex" style="gap: 1rem">
+      <button id="button_login" class="button is-primary is-fullwidth is-not-logged-in is-hidden">登录</button>
+      <button id="button_logout" class="button is-danger is-fullwidth is-logged-in is-hidden">退出登录</button>
+    </div>
+  </div>
+</div>
+<script type="module" src="assets/js/index.js"></script>
+</body>
+</html>
