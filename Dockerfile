@@ -33,6 +33,6 @@ ENV APP_ENV=production
 
 COPY --from=builder --chown=nonroot:nonroot /go/bin/auth-server /usr/bin/auth-server
 
-EXPOSE 8080
+EXPOSE 8021
 
 ENTRYPOINT ["/usr/bin/auth-server"]

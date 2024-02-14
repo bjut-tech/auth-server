@@ -25,13 +25,13 @@ var env = os.Getenv("APP_ENV")
 
 var CookieHost = os.Getenv("APP_COOKIE_HOST")
 var CookieSecret = getEnvBytes("APP_COOKIE_SECRET")
-var ListenAddr = "localhost:8080"
+var ListenAddr = "localhost:8021"
 var Production = false
 
 func init() {
 	if env == "production" {
 		Production = true
-		ListenAddr = ":8080"
+		ListenAddr = ":8021"
 
 		log.Println("Running in production mode")
 	} else {
