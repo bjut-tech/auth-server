@@ -30,7 +30,6 @@ func Authorize(c echo.Context) error {
 		return echo.NewHTTPError(http.StatusUnauthorized, "Invalid token")
 	}
 
-	c.Response().Header().Set("Cache-Control", "no-store")
 	c.Response().Header().Set("X-User-ID", cc.Subject)
 
 	if params.AllowedUsers != nil && !slices.Contains(params.AllowedUsers, cc.Subject) {
