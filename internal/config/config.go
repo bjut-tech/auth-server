@@ -4,6 +4,7 @@ import (
 	"encoding/base64"
 	"fmt"
 	"log"
+	"net/url"
 	"os"
 	"strings"
 )
@@ -21,8 +22,21 @@ func getEnvBytes(key string) []byte {
 	return []byte(val)
 }
 
+func getEnvUrl(key string) *url.URL {
+	val := os.Getenv(key)
+	if val == "" {
+		panic(fmt.Errorf("%s is not set", key))
+	}
+	u, err := url.Parse(val)
+	if err != nil {
+		panic(fmt.Errorf("error parsing %s: %w", key, err))
+	}
+	return u
+}
+
 var env = os.Getenv("APP_ENV")
 
+var BaseUrl = getEnvUrl("APP_BASE_URL")
 var CookieHost = os.Getenv("APP_COOKIE_HOST")
 var CookieSecret = getEnvBytes("APP_COOKIE_SECRET")
 var ListenAddr = "localhost:8021"

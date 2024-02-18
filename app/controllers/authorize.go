@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"github.com/bjut-tech/auth-server/app/utils"
+	"github.com/bjut-tech/auth-server/internal/config"
 	"github.com/labstack/echo/v4"
 	"net/http"
 	"net/url"
@@ -21,8 +22,7 @@ func Authorize(c echo.Context) error {
 
 	if cc.Token == nil {
 		if params.Redirect != "" {
-			redirectUrl := c.Request().URL
-			redirectUrl.Path = "/login.html"
+			redirectUrl := config.BaseUrl.JoinPath("/login.html")
 			redirectUrl.RawQuery = "redirect=" + url.QueryEscape(params.Redirect)
 			return c.Redirect(http.StatusFound, redirectUrl.String())
 		}
@@ -34,8 +34,7 @@ func Authorize(c echo.Context) error {
 
 	if params.AllowedUsers != nil && !slices.Contains(params.AllowedUsers, cc.Subject) {
 		if params.Redirect != "" {
-			redirectUrl := c.Request().URL
-			redirectUrl.Path = "/index.html"
+			redirectUrl := config.BaseUrl.JoinPath("/index.html")
 			redirectUrl.RawQuery = "unauthorized"
 			return c.Redirect(http.StatusFound, redirectUrl.String())
 		}
