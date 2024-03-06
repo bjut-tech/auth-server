@@ -53,11 +53,11 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            ghcr.io/${{ github.repository }}
             registry.cn-beijing.aliyuncs.com/jingbh/bjut-auth-server
           tags: |
             type=edge
             type=ref,event=tag
+            type=sha
 
       - uses: docker/build-push-action@v5
         with:

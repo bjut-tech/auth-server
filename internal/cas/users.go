@@ -71,9 +71,6 @@ func GetUser(ctx context.Context, username string, password string) (*UserPrinci
 	// Connection fallback mechanism
 	resp, err := requestUsing(ctx, client, canonicalBaseUrl, &data)
 	if err != nil {
-		resp, err = requestUsing(ctx, client, webvpnBaseUrl, &data)
-	}
-	if err != nil {
 		resp, err = requestUsing(ctx, clientPinned, canonicalBaseUrl, &data)
 	}
 	if err != nil {

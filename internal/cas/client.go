@@ -10,10 +10,8 @@ import (
 
 var canonicalBaseUrl = "https://cas.bjut.edu.cn"
 
-var webvpnBaseUrl = "https://webvpn.bjut.edu.cn/https/77726476706e69737468656265737421f3f652d2253a7d44300d8db9d6562d"
-
 var client = &http.Client{
-	Timeout: 1 * time.Second,
+	Timeout: 2 * time.Second,
 }
 
 var clientPinned = &http.Client{
@@ -28,5 +26,5 @@ var clientPinned = &http.Client{
 			return c, c.HandshakeContext(ctx)
 		},
 	},
-	Timeout: 1 * time.Second,
+	Timeout: 2 * time.Second,
 }
